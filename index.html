@@ -1,0 +1,36 @@
+<form
+  name="form1"
+  action="form2_ok.php"
+  onsubmit="return validateForm()"
+  method="post"
+  00
+>
+  Title: <input type="text" name="subject" /><br />
+  Name: <input type="text" name="writer" /><br />
+  Content: <textarea name="content" cols="20" rows="5"></textarea><br />
+  <input type="submit" value="submit" />
+</form>
+
+<script>
+  function validateForm() {
+    var subject = document.form1.subject;
+    if (subject.value == "") {
+      alert("Please enter a title");
+      subject.focus();
+      return false;
+    }
+
+    var writer = document.form1.writer.value;
+    if (writer == "") {
+      alert("Please enter a name");
+      subject.focus();
+      return false;
+    }
+
+    if (writer.length < 2) {
+      alert("The name must be at least 2 characters long.");
+      writer.focus();
+      return false;
+    }
+  }
+</script>
